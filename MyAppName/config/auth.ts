@@ -37,7 +37,7 @@ export const AUTH_CONFIG = {
       LOGIN: '/api/user/login',
       GET_USER: '/api/user',
       UPDATE_USER: '/api/user/update',
-      GET_ASTROLOGERS: '/api/mentor/list',
+      GET_ADVISORS: '/api/mentor/list',
       GET_SERVICES: '/api/services',
     },
     // API Keys for backend authentication (from mindaro-backend)

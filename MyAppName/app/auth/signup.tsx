@@ -172,11 +172,11 @@ export default function SignUpScreen() {
 
   return (
     <View style={styles.container}>
-      <StatusBar barStyle="dark-content" backgroundColor="#FFD700" />
+      <StatusBar barStyle="light-content" backgroundColor="#0052CC" />
       
-      {/* Yellow Header */}
+      {/* Blue Header */}
       <LinearGradient
-        colors={['#FFD700', '#FFA500']}
+        colors={['#0052CC', '#0066FF']}
         style={styles.header}
       >
         <TouchableOpacity style={styles.skipButton} onPress={handleSkip}>
@@ -189,10 +189,11 @@ export default function SignUpScreen() {
         <View style={styles.logoSection}>
           <View style={styles.logoContainer}>
             <View style={styles.logoCircle}>
-              <Text style={styles.logoIcon}>☀️</Text>
+              <Text style={styles.logoIcon}>🔍</Text>
             </View>
           </View>
-          <Text style={styles.appName}>AstroApp</Text>
+          <Text style={styles.appName}>ADVIJR</Text>
+          <Text style={styles.tagline}>Get-Seek-Help</Text>
         </View>
 
         {/* Form Section */}
@@ -399,7 +400,7 @@ const styles = StyleSheet.create({
   },
   skipText: {
     fontSize: 16,
-    color: '#666',
+    color: '#FFFFFF',
     fontWeight: '500',
   },
   scrollView: {
@@ -421,7 +422,7 @@ const styles = StyleSheet.create({
     width: 100,
     height: 100,
     borderRadius: 50,
-    backgroundColor: '#FFD700',
+    backgroundColor: '#FF8C42',
     alignItems: 'center',
     justifyContent: 'center',
     shadowColor: '#000',
@@ -434,10 +435,18 @@ const styles = StyleSheet.create({
     fontSize: 40,
   },
   appName: {
-    fontSize: 28,
-    fontWeight: '600',
-    color: '#333',
+    fontSize: 32,
+    fontWeight: '700',
+    color: '#0052CC',
     textAlign: 'center',
+    letterSpacing: 2,
+  },
+  tagline: {
+    fontSize: 16,
+    color: '#FF8C42',
+    textAlign: 'center',
+    marginTop: 5,
+    fontWeight: '500',
   },
   formSection: {
     flex: 1,
@@ -481,7 +490,7 @@ const styles = StyleSheet.create({
   },
   helperText: {
     fontSize: 12,
-    color: '#FFD700',
+    color: '#FF8C42',
     marginTop: 5,
     fontStyle: 'italic',
   },
@@ -534,8 +543,8 @@ const styles = StyleSheet.create({
     gap: 12,
   },
   userTypeSelected: {
-    backgroundColor: '#FFF8DC',
-    borderColor: '#FFD700',
+    backgroundColor: '#E6F2FF',
+    borderColor: '#0052CC',
   },
   radioButton: {
     width: 20,
@@ -545,8 +554,8 @@ const styles = StyleSheet.create({
     borderColor: '#E0E0E0',
   },
   radioSelected: {
-    borderColor: '#FFD700',
-    backgroundColor: '#FFD700',
+    borderColor: '#0052CC',
+    backgroundColor: '#0052CC',
   },
   userTypeContent: {
     flex: 1,
@@ -562,7 +571,7 @@ const styles = StyleSheet.create({
     color: '#666',
   },
   createAccountButton: {
-    backgroundColor: '#FFD700',
+    backgroundColor: '#0052CC',
     borderRadius: 25,
     paddingVertical: 15,
     alignItems: 'center',
@@ -572,7 +581,7 @@ const styles = StyleSheet.create({
   createAccountButtonText: {
     fontSize: 16,
     fontWeight: '600',
-    color: '#333',
+    color: '#FFFFFF',
   },
   divider: {
     flexDirection: 'row',
@@ -606,7 +615,7 @@ const styles = StyleSheet.create({
     width: 24,
     height: 24,
     borderRadius: 12,
-    backgroundColor: '#007BFF',
+    backgroundColor: '#0052CC',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -630,7 +639,7 @@ const styles = StyleSheet.create({
     lineHeight: 18,
   },
   termsLink: {
-    color: '#007BFF',
+    color: '#0052CC',
     textDecorationLine: 'underline',
   },
   signInContainer: {
@@ -644,7 +653,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   signInLink: {
-    color: '#007BFF',
+    color: '#0052CC',
     fontSize: 16,
     fontWeight: '600',
   },

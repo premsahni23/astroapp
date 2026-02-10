@@ -126,17 +126,17 @@ export default function HomeScreen() {
 
   return (
     <View style={styles.container}>
-      <StatusBar barStyle="dark-content" backgroundColor="#FFD700" />
+      <StatusBar barStyle="light-content" backgroundColor="#0052CC" />
       
-      {/* Yellow Header */}
+      {/* Blue Header */}
       <LinearGradient
-        colors={['#FFD700', '#FFA500']}
+        colors={['#0052CC', '#0066FF']}
         style={styles.header}
       >
         <View style={styles.headerContent}>
           <View style={styles.greetingSection}>
             <Text style={styles.greeting}>Hello, {firstName}!</Text>
-            <Text style={styles.subGreeting}>Welcome to AstroApp</Text>
+            <Text style={styles.subGreeting}>Welcome to ADVIJR</Text>
           </View>
           <TouchableOpacity 
             style={styles.profileButton}
@@ -182,7 +182,7 @@ export default function HomeScreen() {
                 style={styles.serviceCard}
                 onPress={() => handleServicePress(service)}
               >
-                <Ionicons name={service.icon as any} size={30} color="#FFD700" />
+                <Ionicons name={service.icon as any} size={30} color="#0052CC" />
                 <Text style={styles.serviceTitle}>{service.title}</Text>
               </TouchableOpacity>
             ))}
@@ -198,7 +198,7 @@ export default function HomeScreen() {
         {/* Promotional Banner */}
         <View style={styles.bannerContainer}>
           <LinearGradient
-            colors={['#FFD700', '#FFA500']}
+            colors={['#0052CC', '#0066FF']}
             style={styles.banner}
           >
             <Text style={styles.bannerTitle}>Get Your First Reading</Text>
@@ -219,7 +219,7 @@ export default function HomeScreen() {
           </View>
           
           {loading ? (
-            <ActivityIndicator size="large" color="#FFD700" style={styles.loader} />
+            <ActivityIndicator size="large" color="#0052CC" style={styles.loader} />
           ) : (
             <ScrollView horizontal showsHorizontalScrollIndicator={false}>
               {astrologers.map((astrologer) => (
@@ -359,7 +359,7 @@ const styles = StyleSheet.create({
   },
   viewAllText: {
     fontSize: 14,
-    color: '#FFD700',
+    color: '#0052CC',
     fontWeight: '500',
   },
   servicesGrid: {
@@ -470,12 +470,12 @@ const styles = StyleSheet.create({
   },
   priceText: {
     fontSize: 12,
-    color: '#FFD700',
+    color: '#FF8C42',
     fontWeight: '600',
     marginBottom: 10,
   },
   consultButton: {
-    backgroundColor: '#FFD700',
+    backgroundColor: '#0052CC',
     paddingHorizontal: 15,
     paddingVertical: 8,
     borderRadius: 15,

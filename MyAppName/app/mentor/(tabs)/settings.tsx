@@ -115,7 +115,7 @@ export default function MentorSettings() {
   }) => (
     <View style={styles.settingItem}>
       <View style={styles.settingLeft}>
-        <Ionicons name={icon as any} size={20} color="#FFD700" style={styles.settingIcon} />
+        <Ionicons name={icon as any} size={20} color="#0052CC" style={styles.settingIcon} />
         <View style={styles.settingText}>
           <Text style={styles.settingTitle}>{title}</Text>
           {subtitle && <Text style={styles.settingSubtitle}>{subtitle}</Text>}
@@ -124,7 +124,7 @@ export default function MentorSettings() {
       <Switch
         value={value}
         onValueChange={onValueChange}
-        trackColor={{ false: '#E0E0E0', true: '#FFD700' }}
+        trackColor={{ false: '#E0E0E0', true: '#0052CC' }}
         thumbColor="#FFFFFF"
       />
     </View>
@@ -135,7 +135,7 @@ export default function MentorSettings() {
     subtitle, 
     icon, 
     onPress, 
-    color = '#FFD700' 
+    color = '#0052CC' 
   }: {
     title: string;
     subtitle?: string;
@@ -157,11 +157,11 @@ export default function MentorSettings() {
 
   return (
     <View style={styles.container}>
-      <StatusBar barStyle="light-content" backgroundColor="#FFD700" />
+      <StatusBar barStyle="light-content" backgroundColor="#0052CC" />
       
       {/* Header */}
       <LinearGradient
-        colors={['#FFD700', '#FFA500']}
+        colors={['#0052CC', '#0066FF']}
         style={styles.header}
       >
         <TouchableOpacity 
@@ -347,13 +347,13 @@ export default function MentorSettings() {
               title="Help & Support"
               subtitle="Get help or contact support"
               icon="help-circle"
-              onPress={() => Alert.alert('Support', 'Contact support: support@astroapp.com\nPhone: +91-9876543210')}
+              onPress={() => Alert.alert('Support', 'Contact support: support@advijr.com\nPhone: +91-9876543210')}
             />
             <ActionButton
               title="About App"
               subtitle="App version and information"
               icon="information-circle"
-              onPress={() => Alert.alert('About', 'Astro App v1.0.0\nFor professional astrologers')}
+              onPress={() => Alert.alert('About', 'ADVIJR v1.0.0\nFor professional advisors and consultants')}
             />
           </View>
         </View>

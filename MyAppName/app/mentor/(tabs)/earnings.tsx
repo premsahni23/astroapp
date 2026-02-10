@@ -100,11 +100,11 @@ export default function MentorEarnings() {
 
   return (
     <View style={styles.container}>
-      <StatusBar barStyle="light-content" backgroundColor="#FFD700" />
+      <StatusBar barStyle="light-content" backgroundColor="#0052CC" />
       
       {/* Header */}
       <LinearGradient
-        colors={['#FFD700', '#FFA500']}
+        colors={['#0052CC', '#0066FF']}
         style={styles.header}
       >
         <Text style={styles.headerTitle}>Earnings</Text>
@@ -274,7 +274,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   activePeriodButton: {
-    backgroundColor: '#FFD700',
+    backgroundColor: '#0052CC',
   },
   periodText: {
     fontSize: 14,
@@ -333,7 +333,7 @@ const styles = StyleSheet.create({
   },
   viewAllText: {
     fontSize: 14,
-    color: '#FFD700',
+    color: '#0052CC',
     fontWeight: '500',
   },
   statsGrid: {

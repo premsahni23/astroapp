@@ -13,6 +13,7 @@ import java.util.Set;
 public interface MentorRepository extends BaseRepository<Mentor> {
     Optional<Mentor> findByName(String name);
     Optional<Mentor> findByUmid(Integer umid);
+    Optional<Mentor> findByEmail(String email);
 //    Page<Mentor> findByCategoriesContains(Category category, Pageable pageable);
     Page<Mentor> findByCategoriesContainingAndMainlanguage(Set<Category> categories, String mainlanguage, Pageable pageable);
 }

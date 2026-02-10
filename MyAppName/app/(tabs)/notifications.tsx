@@ -43,8 +43,8 @@ export default function NotificationsScreen() {
   const [notifications, setNotifications] = useState<Notification[]>([
     {
       id: '1',
-      title: 'Welcome to AstroApp',
-      message: 'Your cosmic journey begins now! Explore your horoscope and connect with expert astrologers.',
+      title: 'Welcome to ADVIJR',
+      message: 'Your journey begins now! Explore services and connect with expert advisors.',
       type: 'welcome',
       timestamp: new Date().toISOString(),
       read: false,
@@ -270,7 +270,7 @@ const styles = StyleSheet.create({
     width: 44,
     height: 44,
     borderRadius: 22,
-    backgroundColor: 'rgba(255, 215, 0, 0.2)',
+    backgroundColor: 'rgba(0, 82, 204, 0.2)',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -294,7 +294,7 @@ const styles = StyleSheet.create({
   statNumber: {
     fontSize: 32,
     fontWeight: '700',
-    color: '#FFD700',
+    color: '#0052CC',
     marginBottom: 4,
   },
   statLabel: {
@@ -368,8 +368,8 @@ const styles = StyleSheet.create({
     borderColor: 'rgba(255, 255, 255, 0.2)',
   },
   typeButtonActive: {
-    backgroundColor: 'rgba(255, 215, 0, 0.2)',
-    borderColor: '#FFD700',
+    backgroundColor: 'rgba(0, 82, 204, 0.2)',
+    borderColor: '#0052CC',
   },
   typeButtonText: {
     color: 'rgba(255, 255, 255, 0.7)',
@@ -377,7 +377,7 @@ const styles = StyleSheet.create({
     fontWeight: '600',
   },
   typeButtonTextActive: {
-    color: '#FFD700',
+    color: '#0052CC',
   },
   sendButton: {
     marginTop: 8,
@@ -405,8 +405,8 @@ const styles = StyleSheet.create({
     borderColor: 'rgba(255, 255, 255, 0.2)',
   },
   unreadNotification: {
-    backgroundColor: 'rgba(255, 215, 0, 0.1)',
-    borderColor: 'rgba(255, 215, 0, 0.3)',
+    backgroundColor: 'rgba(0, 82, 204, 0.1)',
+    borderColor: 'rgba(0, 82, 204, 0.3)',
   },
   notificationHeader: {
     flexDirection: 'row',
@@ -417,7 +417,7 @@ const styles = StyleSheet.create({
     width: 40,
     height: 40,
     borderRadius: 20,
-    backgroundColor: 'rgba(255, 215, 0, 0.2)',
+    backgroundColor: 'rgba(0, 82, 204, 0.2)',
     alignItems: 'center',
     justifyContent: 'center',
     marginRight: 12,
@@ -442,7 +442,7 @@ const styles = StyleSheet.create({
     width: 8,
     height: 8,
     borderRadius: 4,
-    backgroundColor: '#FFD700',
+    backgroundColor: '#0052CC',
   },
   notificationMessage: {
     fontSize: 14,
@@ -456,8 +456,8 @@ const styles = StyleSheet.create({
   notificationTypeLabel: {
     fontSize: 10,
     fontWeight: '700',
-    color: '#FFD700',
-    backgroundColor: 'rgba(255, 215, 0, 0.2)',
+    color: '#0052CC',
+    backgroundColor: 'rgba(0, 82, 204, 0.2)',
     paddingHorizontal: 8,
     paddingVertical: 4,
     borderRadius: 8,

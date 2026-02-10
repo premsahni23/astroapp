@@ -156,7 +156,7 @@ export default function OTPVerificationScreen() {
               {/* Icon */}
               <View style={styles.iconContainer}>
                 <LinearGradient
-                  colors={['#FFD700', '#FFA500']}
+                  colors={['#0052CC', '#0066FF']}
                   style={styles.iconGradient}
                 >
                   <Text style={styles.iconText}>📱</Text>
@@ -207,7 +207,7 @@ export default function OTPVerificationScreen() {
                     style={styles.resendButton}
                   >
                     {resendLoading ? (
-                      <ActivityIndicator size="small" color="#FFD700" />
+                      <ActivityIndicator size="small" color="#0052CC" />
                     ) : (
                       <Text style={styles.resendText}>Resend OTP</Text>
                     )}
@@ -227,13 +227,13 @@ export default function OTPVerificationScreen() {
                 <LinearGradient
                   colors={
                     loading || otp.join('').length !== 6
-                      ? ['rgba(255, 215, 0, 0.5)', 'rgba(255, 165, 0, 0.5)']
-                      : ['#FFD700', '#FFA500']
+                      ? ['rgba(0, 82, 204, 0.5)', 'rgba(0, 102, 255, 0.5)']
+                      : ['#0052CC', '#0066FF']
                   }
                   style={styles.verifyButtonGradient}
                 >
                   {loading ? (
-                    <ActivityIndicator color="#000" />
+                    <ActivityIndicator color="#FFF" />
                   ) : (
                     <Text style={styles.verifyButtonText}>Verify OTP</Text>
                   )}
@@ -333,7 +333,7 @@ const styles = StyleSheet.create({
   phoneNumber: {
     fontSize: 18,
     fontWeight: '600',
-    color: '#FFD700',
+    color: '#0052CC',
     textAlign: 'center',
     marginBottom: 40,
   },
@@ -372,8 +372,8 @@ const styles = StyleSheet.create({
     fontWeight: '700',
   },
   otpInputFilled: {
-    borderColor: '#FFD700',
-    backgroundColor: 'rgba(255, 215, 0, 0.1)',
+    borderColor: '#0052CC',
+    backgroundColor: 'rgba(0, 82, 204, 0.1)',
   },
 
   // Timer and Resend
@@ -392,7 +392,7 @@ const styles = StyleSheet.create({
   resendText: {
     fontSize: 16,
     fontWeight: '600',
-    color: '#FFD700',
+    color: '#0052CC',
   },
 
   // Verify Button
@@ -409,7 +409,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   verifyButtonText: {
-    color: '#000',
+    color: '#FFF',
     fontSize: 18,
     fontWeight: '700',
   },

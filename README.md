@@ -1,6 +1,13 @@
-# 🔮 Mindaro - Astrology Consultation App
+# 🌟 ADVIJR - Get-Seek-Help
 
-A full-stack astrology consultation platform built with **React Native (Expo)** and **Spring Boot**, featuring real-time video/audio calls, chat messaging, and wallet-based billing system.
+A full-stack service consultation platform built with **React Native (Expo)** and **Spring Boot**, featuring real-time video/audio calls, chat messaging, and wallet-based billing system.
+
+**Brand Colors:** Blue (#0052CC) & Orange (#FF8C42)
+
+> 🎯 **[START HERE](START_HERE.md)** - Quick navigation for everything!  
+> 📚 **[Complete Documentation](DOCUMENTATION_INDEX.md)** - All guides in one place!  
+> 🚀 **[Push to GitHub](PUSH_TO_YOUR_GITHUB.md)** - Quick guide for your repository!  
+> ⚡ **[Copy & Paste Commands](COPY_PASTE_COMMANDS.txt)** - Push to GitHub in 2 minutes!
 
 ## 📱 Features
 
@@ -253,12 +260,40 @@ npx expo build:ios
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
+## 📚 Documentation
+
+Comprehensive guides available:
+
+### 🚀 Getting Started
+- **[QUICK_START_GUIDE.md](QUICK_START_GUIDE.md)** - Complete setup guide for beginners
+- **[PROJECT_STRUCTURE_GUIDE.md](PROJECT_STRUCTURE_GUIDE.md)** - Detailed file structure & what each file does
+
+### 🔧 Development
+- **[GIT_WORKFLOW_GUIDE.md](GIT_WORKFLOW_GUIDE.md)** - Complete Git workflow & GitHub integration
+- **[GIT_COMMANDS_CHEATSHEET.md](GIT_COMMANDS_CHEATSHEET.md)** - Quick reference for all Git commands
+- **[COLOR_MIGRATION_COMPLETE.md](COLOR_MIGRATION_COMPLETE.md)** - ADVIJR branding & color scheme
+
+### 🚀 Deployment
+- **[DEPLOYMENT.md](DEPLOYMENT.md)** - Production deployment guide
+- **[PRODUCTION_READY.md](PRODUCTION_READY.md)** - Production readiness checklist
+
+## 🎯 Quick Links
+
+| Task | Documentation |
+|------|---------------|
+| First time setup | [Quick Start Guide](QUICK_START_GUIDE.md) |
+| Understanding project structure | [Project Structure Guide](PROJECT_STRUCTURE_GUIDE.md) |
+| Push code to GitHub | [Git Workflow Guide](GIT_WORKFLOW_GUIDE.md) |
+| Git commands reference | [Git Cheatsheet](GIT_COMMANDS_CHEATSHEET.md) |
+| Change colors/branding | [Color Migration Guide](COLOR_MIGRATION_COMPLETE.md) |
+| Deploy to production | [Deployment Guide](DEPLOYMENT.md) |
+
 ## 🆘 Support
 
 For support and questions:
-- 📧 Email: support@mindaro.com
-- 💬 Discord: [Join our community](https://discord.gg/mindaro)
-- 📖 Documentation: [docs.mindaro.com](https://docs.mindaro.com)
+- 📖 **Documentation**: Check the guides above
+- 💻 **Code Issues**: Review error messages and check relevant documentation
+- 🔍 **Troubleshooting**: See QUICK_START_GUIDE.md troubleshooting section
 
 ## 🙏 Acknowledgments
 
@@ -266,7 +301,8 @@ For support and questions:
 - WebRTC integration for real-time communication
 - MariaDB for reliable data storage
 - Expo for cross-platform mobile development
+- Complete ADVIJR branding with blue/orange color scheme
 
 ---
 
-**Made with 🔮 by the Mindaro Team**
+**Made with 🌟 by the ADVIJR Team**

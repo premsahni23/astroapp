@@ -120,11 +120,11 @@ export default function MentorChat() {
 
   return (
     <View style={styles.container}>
-      <StatusBar barStyle="light-content" backgroundColor="#FFD700" />
+      <StatusBar barStyle="light-content" backgroundColor="#0052CC" />
       
       {/* Header */}
       <LinearGradient
-        colors={['#FFD700', '#FFA500']}
+        colors={['#0052CC', '#0066FF']}
         style={styles.header}
       >
         <View style={styles.headerContent}>
@@ -221,21 +221,21 @@ export default function MentorChat() {
       <View style={styles.quickActions}>
         <Link href="/mentor/broadcast" asChild>
           <TouchableOpacity style={styles.quickActionButton}>
-            <Ionicons name="megaphone" size={20} color="#FFD700" />
+            <Ionicons name="megaphone" size={20} color="#0052CC" />
             <Text style={styles.quickActionText}>Broadcast</Text>
           </TouchableOpacity>
         </Link>
         
         <Link href="/mentor/(tabs)/settings" asChild>
           <TouchableOpacity style={styles.quickActionButton}>
-            <Ionicons name="settings" size={20} color="#FFD700" />
+            <Ionicons name="settings" size={20} color="#0052CC" />
             <Text style={styles.quickActionText}>Settings</Text>
           </TouchableOpacity>
         </Link>
         
         <Link href="/mentor/chat-analytics" asChild>
           <TouchableOpacity style={styles.quickActionButton}>
-            <Ionicons name="analytics" size={20} color="#FFD700" />
+            <Ionicons name="analytics" size={20} color="#0052CC" />
             <Text style={styles.quickActionText}>Analytics</Text>
           </TouchableOpacity>
         </Link>
@@ -427,7 +427,7 @@ const styles = StyleSheet.create({
   },
   quickActionText: {
     fontSize: 12,
-    color: '#FFD700',
+    color: '#0052CC',
     fontWeight: '500',
     marginTop: 4,
   },

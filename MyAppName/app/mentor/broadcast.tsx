@@ -123,11 +123,11 @@ export default function BroadcastMessage() {
 
   return (
     <View style={styles.container}>
-      <StatusBar barStyle="light-content" backgroundColor="#FFD700" />
+      <StatusBar barStyle="light-content" backgroundColor="#0052CC" />
       
       {/* Header */}
       <LinearGradient
-        colors={['#FFD700', '#FFA500']}
+        colors={['#0052CC', '#0066FF']}
         style={styles.header}
       >
         <TouchableOpacity 
@@ -178,7 +178,7 @@ export default function BroadcastMessage() {
                 <Text style={styles.templateText} numberOfLines={2}>
                   {template}
                 </Text>
-                <Ionicons name="add-circle" size={16} color="#FFD700" />
+                <Ionicons name="add-circle" size={16} color="#0052CC" />
               </TouchableOpacity>
             ))}
           </View>
@@ -239,13 +239,13 @@ export default function BroadcastMessage() {
         <View style={styles.section}>
           <View style={styles.summaryContainer}>
             <View style={styles.summaryItem}>
-              <Ionicons name="people" size={20} color="#FFD700" />
+              <Ionicons name="people" size={20} color="#0052CC" />
               <Text style={styles.summaryText}>
                 {getTotalRecipients()} recipients selected
               </Text>
             </View>
             <View style={styles.summaryItem}>
-              <Ionicons name="time" size={20} color="#FFD700" />
+              <Ionicons name="time" size={20} color="#0052CC" />
               <Text style={styles.summaryText}>
                 Estimated delivery: 2-5 minutes
               </Text>
@@ -341,7 +341,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   messageTypeButtonActive: {
-    backgroundColor: '#FFD700',
+    backgroundColor: '#0052CC',
   },
   messageTypeText: {
     fontSize: 14,
@@ -412,9 +412,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#F8F8F8',
   },
   audienceOptionSelected: {
-    backgroundColor: '#FFF8DC',
+    backgroundColor: 'rgba(0, 82, 204, 0.1)',
     borderWidth: 1,
-    borderColor: '#FFD700',
+    borderColor: '#0052CC',
   },
   audienceLeft: {
     flexDirection: 'row',
@@ -432,8 +432,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   checkboxSelected: {
-    backgroundColor: '#FFD700',
-    borderColor: '#FFD700',
+    backgroundColor: '#0052CC',
+    borderColor: '#0052CC',
   },
   audienceLabel: {
     fontSize: 16,

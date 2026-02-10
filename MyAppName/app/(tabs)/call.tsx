@@ -396,7 +396,7 @@ export default function CallScreen() {
     if (loading) {
       return (
         <View style={styles.loadingContainer}>
-          <ActivityIndicator size="large" color="#FFD700" />
+          <ActivityIndicator size="large" color="#0052CC" />
           <Text style={styles.loadingText}>Loading...</Text>
         </View>
       );
@@ -482,11 +482,11 @@ export default function CallScreen() {
 
   return (
     <View style={styles.container}>
-      <StatusBar barStyle="dark-content" backgroundColor="#FFD700" />
+      <StatusBar barStyle="dark-content" backgroundColor="#0052CC" />
       
       {/* Header */}
       <LinearGradient
-        colors={['#FFD700', '#FFA500']}
+        colors={['#0052CC', '#0066FF']}
         style={styles.header}
       >
         <View style={styles.headerTop}>
@@ -514,7 +514,7 @@ export default function CallScreen() {
           <Ionicons 
             name="people" 
             size={20} 
-            color={selectedTab === 'mentors' ? '#FFD700' : '#666'} 
+            color={selectedTab === 'mentors' ? '#0052CC' : '#666'} 
           />
           <Text style={[styles.tabText, selectedTab === 'mentors' && styles.activeTabText]}>
             Mentors
@@ -528,7 +528,7 @@ export default function CallScreen() {
           <Ionicons 
             name="time" 
             size={20} 
-            color={selectedTab === 'history' ? '#FFD700' : '#666'} 
+            color={selectedTab === 'history' ? '#0052CC' : '#666'} 
           />
           <Text style={[styles.tabText, selectedTab === 'history' && styles.activeTabText]}>
             Call History
@@ -646,7 +646,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#F0F0F0',
   },
   activeFilterTab: {
-    backgroundColor: '#FFD700',
+    backgroundColor: '#0052CC',
   },
   filterTabText: {
     fontSize: 14,
@@ -654,7 +654,7 @@ const styles = StyleSheet.create({
     fontWeight: '500',
   },
   activeFilterTabText: {
-    color: '#333',
+    color: '#FFFFFF',
     fontWeight: '600',
   },
   content: {
@@ -727,7 +727,7 @@ const styles = StyleSheet.create({
   },
   star: {
     fontSize: 14,
-    color: '#FFD700',
+    color: '#FF8C42',
   },
   orders: {
     fontSize: 12,
@@ -830,7 +830,7 @@ const styles = StyleSheet.create({
   },
   activeTab: {
     borderBottomWidth: 2,
-    borderBottomColor: '#FFD700',
+    borderBottomColor: '#0052CC',
   },
   tabText: {
     fontSize: 14,
@@ -839,7 +839,7 @@ const styles = StyleSheet.create({
     fontWeight: '500',
   },
   activeTabText: {
-    color: '#FFD700',
+    color: '#0052CC',
     fontWeight: '600',
   },
   

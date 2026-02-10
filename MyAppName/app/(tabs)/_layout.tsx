@@ -7,7 +7,7 @@ export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: '#333333',
+        tabBarActiveTintColor: '#0052CC',
         tabBarInactiveTintColor: '#999999',
         headerShown: false,
         tabBarStyle: {
@@ -32,7 +32,7 @@ export default function TabLayout() {
             <Ionicons 
               name={focused ? "home" : "home-outline"} 
               size={24} 
-              color={focused ? '#333333' : '#999999'} 
+              color={focused ? '#0052CC' : '#999999'} 
             />
           ),
         }}
@@ -45,7 +45,7 @@ export default function TabLayout() {
             <Ionicons 
               name={focused ? "chatbubbles" : "chatbubbles-outline"} 
               size={24} 
-              color={focused ? '#333333' : '#999999'} 
+              color={focused ? '#0052CC' : '#999999'} 
             />
           ),
         }}

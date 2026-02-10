@@ -181,11 +181,11 @@ export default function MentorChatBoxScreen() {
       style={styles.container}
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
     >
-      <StatusBar barStyle="light-content" backgroundColor="#FFD700" />
+      <StatusBar barStyle="light-content" backgroundColor="#0052CC" />
       
       {/* Header */}
       <LinearGradient
-        colors={['#FFD700', '#FFA500']}
+        colors={['#0052CC', '#0066FF']}
         style={styles.header}
       >
         <View style={styles.headerContent}>
@@ -456,7 +456,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
   },
   mentorMessageBubble: {
-    backgroundColor: '#FFD700',
+    backgroundColor: '#0052CC',
     borderBottomRightRadius: 5,
   },
   clientMessageBubble: {
@@ -476,7 +476,7 @@ const styles = StyleSheet.create({
     lineHeight: 20,
   },
   mentorMessageText: {
-    color: '#333',
+    color: '#FFFFFF',
   },
   clientMessageText: {
     color: '#333',
@@ -486,7 +486,7 @@ const styles = StyleSheet.create({
     marginTop: 5,
   },
   mentorMessageTime: {
-    color: 'rgba(0, 0, 0, 0.6)',
+    color: 'rgba(255, 255, 255, 0.8)',
     textAlign: 'right',
   },
   clientMessageTime: {
@@ -499,7 +499,7 @@ const styles = StyleSheet.create({
     borderTopColor: '#E0E0E0',
   },
   quickResponseButton: {
-    backgroundColor: '#FFF8DC',
+    backgroundColor: '#E6F2FF',
     borderRadius: 20,
     paddingHorizontal: 15,
     paddingVertical: 8,
@@ -548,7 +548,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   sendButtonActive: {
-    backgroundColor: '#FFD700',
+    backgroundColor: '#0052CC',
   },
   sendButtonInactive: {
     backgroundColor: '#CCC',

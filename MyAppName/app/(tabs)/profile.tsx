@@ -202,11 +202,11 @@ export default function ProfileTab() {
 
   return (
     <View style={styles.container}>
-      <StatusBar barStyle="dark-content" backgroundColor="#FFD700" />
+      <StatusBar barStyle="light-content" backgroundColor="#0052CC" />
       
-      {/* Yellow Header */}
+      {/* Blue Header */}
       <LinearGradient
-        colors={['#FFD700', '#FFA500']}
+        colors={['#0052CC', '#0066FF']}
         style={styles.header}
       >
         <TouchableOpacity 
@@ -466,7 +466,7 @@ const styles = StyleSheet.create({
     width: 120,
     height: 120,
     borderRadius: 60,
-    backgroundColor: '#FFD700',
+    backgroundColor: '#FF8C42',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -545,8 +545,8 @@ const styles = StyleSheet.create({
     borderColor: '#E0E0E0',
   },
   radioSelected: {
-    borderColor: '#FFD700',
-    backgroundColor: '#FFD700',
+    borderColor: '#0052CC',
+    backgroundColor: '#0052CC',
   },
   genderText: {
     fontSize: 16,

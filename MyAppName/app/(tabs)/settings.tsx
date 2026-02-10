@@ -332,7 +332,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   editProfileButtonText: {
-    color: '#FFD700',
+    color: '#0052CC',
     fontSize: 16,
     fontWeight: '600',
   },

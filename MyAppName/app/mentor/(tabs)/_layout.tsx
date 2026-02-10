@@ -5,7 +5,7 @@ export default function MentorTabLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: '#FFD700',
+        tabBarActiveTintColor: '#0052CC',
         tabBarInactiveTintColor: '#666',
         tabBarStyle: {
           backgroundColor: '#FFFFFF',

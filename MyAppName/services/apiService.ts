@@ -227,6 +227,44 @@ export class ApiService {
   // ===== MENTOR CONTROLLER =====
   
   /**
+   * POST /api/mentor/register - Register a new mentor
+   */
+  static async registerMentor(mentorData: {
+    name: string;
+    email: string;
+    mobile: number;
+    country: string;
+    password: string;
+    category?: string;
+    experience?: number;
+  }): Promise<ApiResponse<any>> {
+    return this.makeRequest('/api/mentor/register', {
+      method: 'POST',
+      body: JSON.stringify(mentorData),
+    });
+  }
+
+  /**
+   * POST /api/mentor/login - Mentor login
+   */
+  static async loginMentor(loginData: {
+    email: string;
+    password: string;
+  }): Promise<ApiResponse<any>> {
+    return this.makeRequest('/api/mentor/login', {
+      method: 'POST',
+      body: JSON.stringify(loginData),
+    });
+  }
+
+  /**
+   * GET /api/mentor/email/{email} - Get mentor by email
+   */
+  static async getMentorByEmail(email: string): Promise<ApiResponse<any>> {
+    return this.makeRequest(`/api/mentor/email/${encodeURIComponent(email)}`);
+  }
+
+  /**
    * GET /api/mentor/list - Get all mentors
    */
   static async getMentors(): Promise<ApiResponse<MentorData[]>> {
@@ -1080,7 +1118,7 @@ export class ApiService {
   }
 
   // Legacy methods for backward compatibility
-  static async getAstrologers(): Promise<ApiResponse<MentorData[]>> {
+  static async getAdvisors(): Promise<ApiResponse<MentorData[]>> {
     return this.getMentors();
   }
 

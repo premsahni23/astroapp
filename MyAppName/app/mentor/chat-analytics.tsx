@@ -107,7 +107,7 @@ export default function ChatAnalytics() {
       <Text style={styles.chartTitle}>Messages Overview</Text>
       <View style={styles.chartLegend}>
         <View style={styles.legendItem}>
-          <View style={[styles.legendColor, { backgroundColor: '#FFD700' }]} />
+          <View style={[styles.legendColor, { backgroundColor: '#0052CC' }]} />
           <Text style={styles.legendText}>Sent</Text>
         </View>
         <View style={styles.legendItem}>
@@ -125,7 +125,7 @@ export default function ChatAnalytics() {
           return (
             <View key={index} style={styles.chartBar}>
               <View style={styles.barContainer}>
-                <View style={[styles.bar, { height: sentHeight, backgroundColor: '#FFD700' }]} />
+                <View style={[styles.bar, { height: sentHeight, backgroundColor: '#0052CC' }]} />
                 <View style={[styles.bar, { height: receivedHeight, backgroundColor: '#4CAF50' }]} />
               </View>
               <Text style={styles.barLabel}>{item.day}</Text>
@@ -169,11 +169,11 @@ export default function ChatAnalytics() {
 
   return (
     <View style={styles.container}>
-      <StatusBar barStyle="light-content" backgroundColor="#FFD700" />
+      <StatusBar barStyle="light-content" backgroundColor="#0052CC" />
       
       {/* Header */}
       <LinearGradient
-        colors={['#FFD700', '#FFA500']}
+        colors={['#0052CC', '#0066FF']}
         style={styles.header}
       >
         <TouchableOpacity 
@@ -244,7 +244,7 @@ export default function ChatAnalytics() {
         <View style={styles.additionalMetrics}>
           <View style={styles.metricRow}>
             <View style={styles.metricItem}>
-              <Ionicons name="star" size={20} color="#FFD700" />
+              <Ionicons name="star" size={20} color="#FF8C42" />
               <Text style={styles.metricLabel}>Client Satisfaction</Text>
               <Text style={styles.metricValue}>{currentData.clientSatisfaction}/5.0</Text>
             </View>
@@ -278,7 +278,7 @@ export default function ChatAnalytics() {
             </Text>
           </View>
           <View style={styles.insightItem}>
-            <Ionicons name="star" size={16} color="#FFD700" />
+            <Ionicons name="star" size={16} color="#FF8C42" />
             <Text style={styles.insightText}>
               Client satisfaction increased to {currentData.clientSatisfaction}/5.0
             </Text>
@@ -339,7 +339,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   periodButtonActive: {
-    backgroundColor: '#FFD700',
+    backgroundColor: '#0052CC',
   },
   periodText: {
     fontSize: 14,
@@ -347,7 +347,7 @@ const styles = StyleSheet.create({
     fontWeight: '500',
   },
   periodTextActive: {
-    color: '#333',
+    color: '#FFFFFF',
   },
   metricsContainer: {
     flexDirection: 'row',
@@ -554,7 +554,7 @@ const styles = StyleSheet.create({
   clientMessages: {
     fontSize: 18,
     fontWeight: '600',
-    color: '#FFD700',
+    color: '#0052CC',
   },
   clientMessagesLabel: {
     fontSize: 12,

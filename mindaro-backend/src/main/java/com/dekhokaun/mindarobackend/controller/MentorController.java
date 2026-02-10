@@ -25,6 +25,24 @@ public class MentorController {
         this.mentorService = mentorService;
     }
 
+    @Operation(summary = "Mentor registration", description = "Register a new mentor account")
+    @PostMapping("/register")
+    public ResponseEntity<MentorResponse> registerMentor(@Valid @RequestBody MentorRequest request) {
+        return ResponseEntity.ok(mentorService.registerMentor(request));
+    }
+
+    @Operation(summary = "Mentor login", description = "Authenticate mentor login")
+    @PostMapping("/login")
+    public ResponseEntity<MentorResponse> loginMentor(@Valid @RequestBody MentorRequest request) {
+        return ResponseEntity.ok(mentorService.loginMentor(request));
+    }
+
+    @Operation(summary = "Get mentor by email", description = "Retrieves mentor details by email")
+    @GetMapping("/email/{email}")
+    public ResponseEntity<MentorResponse> getMentorByEmail(@PathVariable String email) {
+        return ResponseEntity.ok(mentorService.getMentorByEmail(email));
+    }
+
     @Operation(summary = "Create mentor", description = "Create a new mentor profile (Admin only)")
     @PostMapping
     public ResponseEntity<MentorResponse> addMentor(@Valid @RequestBody MentorRequest request) {

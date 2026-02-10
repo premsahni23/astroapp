@@ -19,14 +19,14 @@ export default function MentorProfile() {
   const [isUpdating, setIsUpdating] = useState(false);
   const [formData, setFormData] = useState({
     name: 'Dr. Rajesh Sharma',
-    email: 'rajesh.sharma@astroapp.com',
+    email: 'rajesh.sharma@advijr.com',
     mobile: '+91-9876543210',
     specializations: ['Vedic Astrology', 'Numerology', 'Palmistry'],
     experience: '15',
     languages: ['English', 'Hindi', 'Sanskrit'],
     consultationRate: '250',
-    bio: 'Experienced Vedic astrologer with over 15 years of practice. Specialized in career guidance, relationship counseling, and spiritual healing.',
-    education: 'PhD in Astrology, Certified Numerologist',
+    bio: 'Experienced advisor with over 15 years of practice. Specialized in career guidance, relationship counseling, and personal development.',
+    education: 'Professional Certification, Certified Consultant',
     achievements: 'Featured in Times of India, 1000+ satisfied clients',
     availability: {
       monday: { enabled: true, start: '09:00', end: '18:00' },
@@ -119,11 +119,11 @@ export default function MentorProfile() {
 
   return (
     <View style={styles.container}>
-      <StatusBar barStyle="light-content" backgroundColor="#FFD700" />
+      <StatusBar barStyle="light-content" backgroundColor="#0052CC" />
       
       {/* Header */}
       <LinearGradient
-        colors={['#FFD700', '#FFA500']}
+        colors={['#0052CC', '#0066FF']}
         style={styles.header}
       >
         <TouchableOpacity 
@@ -219,7 +219,7 @@ export default function MentorProfile() {
           <View style={styles.sectionHeader}>
             <Text style={styles.sectionTitle}>Specializations</Text>
             <TouchableOpacity onPress={addSpecialization} style={styles.addButton}>
-              <Ionicons name="add" size={20} color="#FFD700" />
+              <Ionicons name="add" size={20} color="#0052CC" />
             </TouchableOpacity>
           </View>
           
@@ -240,7 +240,7 @@ export default function MentorProfile() {
           <View style={styles.sectionHeader}>
             <Text style={styles.sectionTitle}>Languages</Text>
             <TouchableOpacity onPress={addLanguage} style={styles.addButton}>
-              <Ionicons name="add" size={20} color="#FFD700" />
+              <Ionicons name="add" size={20} color="#0052CC" />
             </TouchableOpacity>
           </View>
           
@@ -311,7 +311,7 @@ export default function MentorProfile() {
                 <Switch
                   value={schedule.enabled}
                   onValueChange={(value) => updateAvailability(day, 'enabled', value)}
-                  trackColor={{ false: '#E0E0E0', true: '#FFD700' }}
+                  trackColor={{ false: '#E0E0E0', true: '#0052CC' }}
                   thumbColor="#FFFFFF"
                 />
               </View>
@@ -404,7 +404,7 @@ const styles = StyleSheet.create({
     width: 120,
     height: 120,
     borderRadius: 60,
-    backgroundColor: '#FFD700',
+    backgroundColor: '#FF8C42',
     alignItems: 'center',
     justifyContent: 'center',
   },

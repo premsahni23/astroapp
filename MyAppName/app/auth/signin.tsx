@@ -75,22 +75,8 @@ export default function SignInScreen() {
   };
 
   const handleMentorSignIn = () => {
-    console.log('🚀 Opening mentor dashboard...');
-    
-    // Set a mock mentor user in context
-    setUser({
-      id: 'mentor-demo-id',
-      name: 'Dr. Rajesh Sharma',
-      email: 'mentor@test.com',
-      mobile: '+91-9876543210',
-      country: 'India',
-      userType: 'MENTOR',
-      profileCompleted: true,
-    });
-
-    // Navigate directly to mentor dashboard
-    router.replace('/mentor/(tabs)/dashboard');
-    Alert.alert('Success', 'Welcome to Mentor Dashboard!');
+    console.log('🚀 Navigating to mentor signin...');
+    router.push('/auth/mentor-signin' as any);
   };
 
   const handleSkip = () => {
@@ -122,11 +108,11 @@ export default function SignInScreen() {
 
   return (
     <View style={styles.container}>
-      <StatusBar barStyle="dark-content" backgroundColor="#FFD700" />
+      <StatusBar barStyle="light-content" backgroundColor="#0052CC" />
       
       {/* Yellow Header */}
       <LinearGradient
-        colors={['#FFD700', '#FFA500']}
+        colors={['#0052CC', '#0066FF']}
         style={styles.header}
       >
         <TouchableOpacity style={styles.skipButton} onPress={handleSkip}>
@@ -139,10 +125,11 @@ export default function SignInScreen() {
         <View style={styles.logoSection}>
           <View style={styles.logoContainer}>
             <View style={styles.logoCircle}>
-              <Text style={styles.logoIcon}>☀️</Text>
+              <Text style={styles.logoIcon}>🔍</Text>
             </View>
           </View>
-          <Text style={styles.appName}>AstroApp</Text>
+          <Text style={styles.appName}>ADVIJR</Text>
+          <Text style={styles.tagline}>Get-Seek-Help</Text>
         </View>
 
         {/* Form Section */}
@@ -254,7 +241,7 @@ export default function SignInScreen() {
             <Text style={styles.testInfoText}>john@example.com / password123</Text>
             <Text style={styles.testInfoText}>jane@example.com / password123</Text>
             <Text style={styles.testInfoText}>admin@example.com / admin123</Text>
-            <Text style={styles.testInfoNote}>Real database accounts with proper validation</Text>
+            <Text style={styles.testInfoNote}>Any email/password combination works for demo</Text>
           </View>
         </View>
       </ScrollView>
@@ -278,7 +265,7 @@ const styles = StyleSheet.create({
   },
   skipText: {
     fontSize: 16,
-    color: '#666',
+    color: '#FFFFFF',
     fontWeight: '500',
   },
   scrollView: {
@@ -300,7 +287,7 @@ const styles = StyleSheet.create({
     width: 100,
     height: 100,
     borderRadius: 50,
-    backgroundColor: '#FFD700',
+    backgroundColor: '#FF8C42',
     alignItems: 'center',
     justifyContent: 'center',
     shadowColor: '#000',
@@ -313,10 +300,18 @@ const styles = StyleSheet.create({
     fontSize: 40,
   },
   appName: {
-    fontSize: 28,
-    fontWeight: '600',
-    color: '#333',
+    fontSize: 32,
+    fontWeight: '700',
+    color: '#0052CC',
     textAlign: 'center',
+    letterSpacing: 2,
+  },
+  tagline: {
+    fontSize: 16,
+    color: '#FF8C42',
+    textAlign: 'center',
+    marginTop: 5,
+    fontWeight: '500',
   },
   formSection: {
     flex: 1,
@@ -363,12 +358,12 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   forgotPasswordText: {
-    color: '#007BFF',
+    color: '#0052CC',
     fontSize: 14,
     fontWeight: '500',
   },
   signInButton: {
-    backgroundColor: '#FFD700',
+    backgroundColor: '#0052CC',
     borderRadius: 25,
     paddingVertical: 15,
     alignItems: 'center',
@@ -377,7 +372,7 @@ const styles = StyleSheet.create({
   signInButtonText: {
     fontSize: 16,
     fontWeight: '600',
-    color: '#333',
+    color: '#FFFFFF',
   },
   mentorSignInButton: {
     backgroundColor: '#E8F5E8',
@@ -446,7 +441,7 @@ const styles = StyleSheet.create({
     width: 24,
     height: 24,
     borderRadius: 12,
-    backgroundColor: '#007BFF',
+    backgroundColor: '#0052CC',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -470,7 +465,7 @@ const styles = StyleSheet.create({
     lineHeight: 18,
   },
   termsLink: {
-    color: '#007BFF',
+    color: '#0052CC',
     textDecorationLine: 'underline',
   },
   signUpContainer: {
@@ -484,7 +479,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   signUpLink: {
-    color: '#007BFF',
+    color: '#0052CC',
     fontSize: 16,
     fontWeight: '600',
   },

@@ -54,11 +54,11 @@ export default function MentorDashboard() {
 
   return (
     <View style={styles.container}>
-      <StatusBar barStyle="light-content" backgroundColor="#FFD700" />
+      <StatusBar barStyle="light-content" backgroundColor="#0052CC" />
       
       {/* Header */}
       <LinearGradient
-        colors={['#FFD700', '#FFA500']}
+        colors={['#0052CC', '#0066FF']}
         style={styles.header}
       >
         <View style={styles.headerContent}>
@@ -119,7 +119,7 @@ export default function MentorDashboard() {
               title="Rating"
               value={`${mentorData.rating} ⭐`}
               icon="star"
-              color="#FFD700"
+              color="#FF8C42"
             />
           </View>
         </View>

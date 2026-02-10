@@ -2,8 +2,10 @@ package com.dekhokaun.mindarobackend.service;
 
 import com.dekhokaun.mindarobackend.exception.CategoryNotFoundException;
 import com.dekhokaun.mindarobackend.exception.ResourceNotFoundException;
+import com.dekhokaun.mindarobackend.exception.InvalidAuthException;
 import com.dekhokaun.mindarobackend.model.Category;
 import com.dekhokaun.mindarobackend.model.Mentor;
+import com.dekhokaun.mindarobackend.model.MentorStatus;
 import com.dekhokaun.mindarobackend.model.Rating;
 import com.dekhokaun.mindarobackend.model.User;
 import com.dekhokaun.mindarobackend.payload.request.MentorRequest;
@@ -17,10 +19,13 @@ import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 import java.util.UUID;
 
@@ -29,12 +34,108 @@ import java.util.UUID;
 public class MentorService {
 
     private final MentorRepository mentorRepository;
-
-    private final CategoryRepository  categoryRepository;
-
+    private final CategoryRepository categoryRepository;
     private final UserRepository userRepository;
-
     private final RatingRepository ratingRepository;
+    private final BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+
+    /**
+     * Register a new mentor
+     */
+    public MentorResponse registerMentor(MentorRequest request) {
+        // Check if mentor already exists
+        Optional<Mentor> existingMentor = mentorRepository.findByEmail(request.getEmail());
+        if (existingMentor.isPresent()) {
+            throw new InvalidAuthException("Mentor with this email already exists");
+        }
+
+        Mentor mentor = new Mentor();
+        mentor.setName(request.getName());
+        mentor.setEmail(request.getEmail());
+        mentor.setMobile(request.getMobile());
+        mentor.setCountry(request.getCountry() != null ? request.getCountry() : "IN");
+        mentor.setStatus(MentorStatus.INACTIVE); // New mentors start as inactive
+        
+        // Set required fields with default values
+        mentor.setMentorfbid("mentor_" + System.currentTimeMillis()); // Generate unique mentorfbid
+        
+        // Hash password using pwd field
+        if (request.getPassword() != null) {
+            mentor.setPwd(passwordEncoder.encode(request.getPassword()));
+        }
+        
+        mentor.setRating(0.0);
+        mentor.setRatingCount(0);
+        
+        // Generate a unique umid (numeric ID for compatibility)
+        mentor.setUmid((int) (System.currentTimeMillis() % Integer.MAX_VALUE));
+
+        Mentor savedMentor = mentorRepository.save(mentor);
+        return convertToResponse(savedMentor);
+    }
+
+    /**
+     * Mentor login
+     */
+    public MentorResponse loginMentor(MentorRequest request) {
+        Optional<Mentor> mentorOpt = mentorRepository.findByEmail(request.getEmail());
+        
+        if (mentorOpt.isEmpty()) {
+            throw new InvalidAuthException("Invalid email or password");
+        }
+        
+        Mentor mentor = mentorOpt.get();
+        
+        // Check password using pwd field
+        if (request.getPassword() != null) {
+            if (mentor.getPwd() == null || !passwordEncoder.matches(request.getPassword(), mentor.getPwd())) {
+                throw new InvalidAuthException("Invalid email or password");
+            }
+        }
+        
+        return convertToResponse(mentor);
+    }
+
+    /**
+     * Get mentor by email
+     */
+    public MentorResponse getMentorByEmail(String email) {
+        Optional<Mentor> mentorOpt = mentorRepository.findByEmail(email);
+        if (mentorOpt.isEmpty()) {
+            throw new ResourceNotFoundException("Mentor not found with email: " + email);
+        }
+        return convertToResponse(mentorOpt.get());
+    }
+
+    /**
+     * Convert Mentor entity to MentorResponse for authentication
+     */
+    private MentorResponse convertToResponse(Mentor mentor) {
+        MentorResponse res = new MentorResponse();
+        res.setId(mentor.getUmid() != null ? mentor.getUmid() : Math.abs(mentor.getId().hashCode()));
+        res.setName(mentor.getName());
+        res.setEmail(mentor.getEmail());
+        res.setMobile(mentor.getMobile() != null ? String.valueOf(mentor.getMobile()) : null);
+        res.setCountry(mentor.getCountry());
+
+        // Dashboard expects only ACTIVE/INACTIVE
+        String status = "INACTIVE";
+        if (mentor.getStatus() != null && mentor.getStatus() == MentorStatus.ACTIVE) {
+            status = "ACTIVE";
+        }
+        res.setStatus(status);
+
+        res.setAbout(mentor.getPlatforminfo());
+        res.setExpertise(mentor.getCategories() == null ? List.of() : mentor.getCategories().stream()
+                .map(Category::getName)
+                .filter(n -> n != null && !n.isBlank())
+                .toList());
+
+        res.setRating(mentor.getRating());
+        res.setRatingCount(mentor.getRatingCount());
+        res.setCreatedAt(mentor.getCreatedAt() != null ? mentor.getCreatedAt().toString() : null);
+        return res;
+    }
 
     /**
      * Add a new mentor
@@ -48,7 +149,12 @@ public class MentorService {
         mentor.setEmail(request.getEmail());
         mentor.setMobile(request.getMobile());
         mentor.setCountry(request.getCountry());
-        mentor.setPwd(request.getPassword()); // In production, this should be hashed
+        
+        // Hash password properly
+        if (request.getPassword() != null) {
+            mentor.setPwd(passwordEncoder.encode(request.getPassword()));
+        }
+        
         mentor.setTotalexpyrs(request.getExperience());
         
         // Set optional fields from request
@@ -74,7 +180,7 @@ public class MentorService {
         mentor.setRate(request.getRate());
         
         // Set required fields with default values (these will be updated later)
-        mentor.setMentorfbid(""); // Default empty string
+        mentor.setMentorfbid("mentor_" + System.currentTimeMillis()); // Generate unique mentorfbid
         mentor.setRating(0.0); // Default rating, will be calculated later
         mentor.setRatingCount(0); // Default rating count, will be updated later
         

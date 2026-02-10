@@ -7,7 +7,7 @@ export default function ChatScreen() {
   return (
     <View style={styles.container}>
       <View style={styles.content}>
-        <Ionicons name="chatbubbles-outline" size={80} color="#FFD700" />
+        <Ionicons name="chatbubbles-outline" size={80} color="#0052CC" />
         <Text style={styles.title}>Chat with Astrologers</Text>
         <Text style={styles.subtitle}>Connect with expert astrologers for personalized guidance</Text>
         
@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
     lineHeight: 22,
   },
   button: {
-    backgroundColor: '#FFD700',
+    backgroundColor: '#0052CC',
     paddingHorizontal: 30,
     paddingVertical: 15,
     borderRadius: 25,
@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
   buttonText: {
     fontSize: 16,
     fontWeight: '600',
-    color: '#333',
+    color: '#FFFFFF',
   },
 });
 

@@ -84,7 +84,7 @@ export default function CategoriesScreen() {
   };
 
   const getCategoryColor = (index: number) => {
-    const colors = ['#FFD700', '#9B59B6', '#3498DB', '#E74C3C', '#F39C12', '#1ABC9C', '#E67E22', '#2ECC71'];
+    const colors = ['#0052CC', '#9B59B6', '#3498DB', '#E74C3C', '#FF8C42', '#1ABC9C', '#E67E22', '#2ECC71'];
     return colors[index % colors.length];
   };
 
@@ -92,7 +92,7 @@ export default function CategoriesScreen() {
     return (
       <SafeAreaView style={styles.container}>
         <View style={styles.loadingContainer}>
-          <ActivityIndicator size="large" color="#FFD700" />
+          <ActivityIndicator size="large" color="#0052CC" />
           <Text style={styles.loadingText}>Loading Categories...</Text>
         </View>
       </SafeAreaView>
@@ -122,8 +122,8 @@ export default function CategoriesScreen() {
               <RefreshControl
                 refreshing={refreshing}
                 onRefresh={handleRefresh}
-                tintColor="#FFD700"
-                colors={['#FFD700']}
+                tintColor="#0052CC"
+                colors={['#0052CC']}
               />
             }
           >
@@ -317,7 +317,7 @@ const styles = StyleSheet.create({
     width: 44,
     height: 44,
     borderRadius: 22,
-    backgroundColor: 'rgba(255, 215, 0, 0.2)',
+    backgroundColor: 'rgba(0, 82, 204, 0.2)',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -345,7 +345,7 @@ const styles = StyleSheet.create({
   statNumber: {
     fontSize: 32,
     fontWeight: '700',
-    color: '#FFD700',
+    color: '#0052CC',
     marginBottom: 4,
   },
   statLabel: {

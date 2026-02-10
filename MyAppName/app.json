@@ -1,16 +1,16 @@
 {
   "expo": {
-    "name": "AstroApp",
-    "slug": "AstroApp",
+    "name": "ADVIJR",
+    "slug": "advijr",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "astroapp",
+    "scheme": "advijr",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.dekhokaun.astroapp"
+      "bundleIdentifier": "com.dekhokaun.advijr"
     },
     "android": {
       "adaptiveIcon": {
@@ -21,7 +21,7 @@
       },
       "edgeToEdgeEnabled": true,
       "predictiveBackGestureEnabled": false,
-      "package": "com.dekhokaun.astroapp",
+      "package": "com.dekhokaun.advijr",
       "usesCleartextTraffic": true
     },
     "web": {

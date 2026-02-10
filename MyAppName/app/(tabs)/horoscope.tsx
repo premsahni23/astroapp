@@ -27,11 +27,11 @@ const zodiacSigns = [
 export default function HoroscopeScreen() {
   return (
     <View style={styles.container}>
-      <StatusBar barStyle="dark-content" backgroundColor="#FFD700" />
+      <StatusBar barStyle="dark-content" backgroundColor="#0052CC" />
       
-      {/* Yellow Header */}
+      {/* Header */}
       <LinearGradient
-        colors={['#FFD700', '#FFA500']}
+        colors={['#0052CC', '#0066FF']}
         style={styles.header}
       >
         <Text style={styles.headerTitle}>Horoscope</Text>
