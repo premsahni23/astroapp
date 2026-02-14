@@ -42,7 +42,14 @@ export default function WalletBalance({ onBalanceUpdate, showAddMoney = true }: 
       onBalanceUpdate?.(walletBalance.balance);
     } catch (error: any) {
       console.error('Error loading wallet balance:', error);
-      Alert.alert('Error', 'Failed to load wallet balance');
+      // Default to 0 balance instead of showing error
+      const defaultBalance: WalletBalanceType = {
+        userId: user.id,
+        balance: 0,
+        currency: 'INR'
+      };
+      setBalance(defaultBalance);
+      onBalanceUpdate?.(0);
     } finally {
       setLoading(false);
     }

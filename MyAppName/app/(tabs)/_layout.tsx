@@ -38,7 +38,20 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="messages"
+        name="mentors"
+        options={{
+          title: 'Mentors',
+          tabBarIcon: ({ focused }) => (
+            <Ionicons 
+              name={focused ? "people" : "people-outline"} 
+              size={24} 
+              color={focused ? '#0052CC' : '#999999'} 
+            />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="chat"
         options={{
           title: 'Chat',
           tabBarIcon: ({ focused }) => (
@@ -96,10 +109,6 @@ export default function TabLayout() {
       />
       <Tabs.Screen
         name="categories"
-        options={{ href: null }}
-      />
-      <Tabs.Screen
-        name="chat"
         options={{ href: null }}
       />
     </Tabs>

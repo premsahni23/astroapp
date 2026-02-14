@@ -43,7 +43,13 @@ export class WalletService {
       });
 
       if (!response.ok) {
-        throw new Error(`Failed to get wallet balance: ${response.status}`);
+        // Return default 0 balance instead of throwing error
+        console.warn(`Wallet balance API returned ${response.status}, defaulting to 0`);
+        return {
+          userId: userId,
+          balance: 0,
+          currency: 'INR'
+        };
       }
 
       const data = await response.json();
@@ -54,7 +60,12 @@ export class WalletService {
       };
     } catch (error: any) {
       console.error('Error getting wallet balance:', error);
-      throw new Error(`Failed to get wallet balance: ${error.message}`);
+      // Return default 0 balance instead of throwing error
+      return {
+        userId: userId,
+        balance: 0,
+        currency: 'INR'
+      };
     }
   }
 

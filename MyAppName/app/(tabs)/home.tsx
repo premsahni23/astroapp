@@ -35,7 +35,7 @@ export default function HomeScreen() {
     setLoading(true);
     try {
       console.log('🔮 Loading astrologers from real API...');
-      const astrologersResponse = await ApiService.getAstrologers();
+      const astrologersResponse = await ApiService.getMentors();
       if (astrologersResponse.success && astrologersResponse.data) {
         console.log('✅ Astrologers loaded from API:', astrologersResponse.data.length);
         setAstrologers(astrologersResponse.data.slice(0, 3)); // Show first 3

@@ -2,21 +2,21 @@ import { Platform } from 'react-native';
 import Constants from 'expo-constants';
 
 // Get the appropriate base URL based on platform and environment
-const getBaseUrl = () => {
-  // For development, use the manifest debuggerHost if available
-  const debuggerHost = Constants.expoConfig?.hostUri?.split(':').shift();
+// const getBaseUrl = () => {
+//   // For development, use the manifest debuggerHost if available
+//   const debuggerHost = Constants.expoConfig?.hostUri?.split(':').shift();
   
-  if (Platform.OS === 'web') {
-    // For web, use localhost
-    return 'http://localhost:3000';
-  } else if (debuggerHost) {
-    // For mobile, use the debugger host (Expo's automatic detection)
-    return `http://${debuggerHost}:3000`;
-  } else {
-    // Fallback for mobile - replace with your computer's IP address
-    return 'http://192.168.1.100:3000'; // Update this with your actual IP
-  }
-};
+//   if (Platform.OS === 'web') {
+//     // For web, use localhost
+//     return 'http://localhost:3000';
+//   } else if (debuggerHost) {
+//     // For mobile, use the debugger host (Expo's automatic detection)
+//     return `http://${debuggerHost}:3000`;
+//   } else {
+//     // Fallback for mobile - replace with your computer's IP address
+//     return 'http://192.168.1.100:3000'; // Update this with your actual IP
+//   }
+// };
 
 // Authentication Configuration
 // Replace these with your actual API keys
@@ -31,7 +31,7 @@ export const AUTH_CONFIG = {
 
   // Backend API Configuration
   API: {
-    BASE_URL: getBaseUrl(), // Dynamic URL with Expo auto-detection
+    BASE_URL: "http://192.168.1.15:3000", // Dynamic URL with Expo auto-detection
     ENDPOINTS: {
       REGISTER: '/api/user/register',
       LOGIN: '/api/user/login',
